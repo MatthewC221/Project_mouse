@@ -1,0 +1,12 @@
+TODO items
+Format:
+Overview: [INCOMPLETE/IN-PROGRESS/COMPLETE] [Name]
+
+Set up mouse event for flex sensor input data (win32 API side): [INCOMPLETE] [None]
+- The flex sensor's data must also be sent. Think of suitable format, currently (X, Y). Could be
+  (X, Y): 0 (for not click). 
+- Mouse input func currently clicks once, want continual click
+
+Fix Arduino accelerometer code (Arduino side): [INCOMPLETE] [None]
+- Understand what's happening with the arduino code
+- Incorporate flex sensor code and send it along with accel values, e.g. (X, Y): 1 or (X, Y): 0
