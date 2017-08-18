@@ -22,6 +22,8 @@ COMMTIMEOUTS timeouts;
 unsigned int current_x;				// Current positions that will change
 unsigned int current_y;
 
+// Averages are used in the following way: for the first 10 readings, we create the average origin. This acceleration
+// will be subtracted from future ones. REQUIRES calibration
 int average_x;
 int average_y;
 
@@ -183,7 +185,8 @@ void parseData(char accel[], int size, int total)
 			x_flag = false;
 		}
 	}
-
+	
+	// Don't worry about this stuff, the calibrations are really poor
 	if (total > 10) {
 		int dest_x = current_x + (x_move - average_x) / 50;
 		int dest_y = current_y + (y_move - average_y) / 50;
