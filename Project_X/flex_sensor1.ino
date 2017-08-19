@@ -1,12 +1,12 @@
 
 const int FLEX_PIN = A0;      //PIN THATS CONNECTED TO THE VOLTAGE DIVIDER OUTPUT
 
-const float VCC = 4.98;       // MEASURE voltage at 5 Volts
-const float RES = 40000.0;    // MEASURE RESISTANCE AT RESISTOR
+const float VCC = 4.98;       // MEASURE voltage at 5 Volts     ****NEEDS UPDATING****
+const float RES = 40000.0;    // MEASURE RESISTANCE AT RESISTOR ****NEEDS UPDATING****
 
 
-const float RES_STRAIGHT = 37300.0; // RESISTANCE WHEN STRAIGHT
-const float RES_RIGHT_ANGLE = 90000.0; // RESISTANCE AT 90
+const float RES_STRAIGHT = 37300.0; // RESISTANCE WHEN STRAIGHT ****NEEDS UPDATING****
+const float RES_RIGHT_ANGLE = 90000.0; // RESISTANCE AT 90      ****NEEDS UPDATING****
 
 int value = 0;
 
@@ -30,7 +30,7 @@ void loop() {
   value = analogRead(FLEX_PIN); //reads the analog value
   Serial.println(value);      //prints analog value
 
-  if(value >= 0){
+  if(value >= 0){                                             ****NEEDS UPDATING****
     digitalWrite(pin1, HIGH);// turns led on if bend is a certain value
   }
    
@@ -42,7 +42,7 @@ void loop() {
 
   Serial.println("Resistance: " + String(FLEX_RES) + "OHMS"); //prints value of resistance
 
-  float ANGLE = map(FLEX_RES, RES_STRAIGHT, RES_RIGHT_ANGLE, 0, 90.0);
+  float ANGLE = map(FLEX_RES, RES_STRAIGHT, RES_RIGHT_ANGLE, 0, 90.0);    ****NEEDS UPDATING****
 
   Serial.println("Bend: " + String(ANGLE) + "degrees");
   Serial.println("----------------------------------------");
