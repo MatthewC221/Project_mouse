@@ -2,7 +2,7 @@ TODO items
 Format:
 Overview: [INCOMPLETE/IN-PROGRESS/COMPLETE] [Name]
 
-Set up mouse event for flex sensor input data (win32 API side): [INCOMPLETE] [None]
+Set up mouse event for flex sensor input data (win32 API side): [IN-progress] [None]
 - The flex sensor's data must also be sent. Think of suitable format, currently (X, Y). Could be
   (X, Y): 0 (for not click). 
 - Output: resistance; degrees; analog value;
