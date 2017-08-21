@@ -1,11 +1,38 @@
-const int FLEX_PIN = A3;      //PIN THATS CONNECTED TO THE VOLTAGE DIVIDER OUTPUT
+/*
+const int FLEX_PIN_1 = A1;      //PIN THATS CONNECTED TO THE VOLTAGE DIVIDER OUTPUT
+const int FLEX_PIN_2 = A2
 
-const float VCC = 4.97;       // MEASURE voltage at 5 Volts
-const float RES = 797;    // MEASURE RESISTANCE AT RESISTOR
+const float VCC_1 = 4.71;       // MEASURE voltage at 5 Volts
+const float RES_1 = 7.68;    // MEASURE RESISTANCE AT RESISTOR
+
+const float VCC_2 = 4.71;       // MEASURE voltage at 5 Volts
+const float RES_2 = 875;    // MEASURE RESISTANCE AT RESISTOR
 
 
-const float RES_STRAIGHT = 26600; // RESISTANCE WHEN STRAIGHT
-const float RES_RIGHT_ANGLE = 42600.0; // RESISTANCE AT 90
+const float RES_STRAIGHT_1 = 26600; // RESISTANCE WHEN STRAIGHT
+const float RES_RIGHT_ANGLE_1 = 42600.0; // RESISTANCE AT 90
+
+const float RES_STRAIGHT_2 = 26600; // RESISTANCE WHEN STRAIGHT
+const float RES_RIGHT_ANGLE_2 = 42600.0; // RESISTANCE AT 90
+*/
+
+const int FLEX_PIN_1 = A1;      //PIN THATS CONNECTED TO THE VOLTAGE DIVIDER OUTPUT
+const int FLEX_PIN_2 = A2
+
+const float VCC_1 = 4.71;       // MEASURE voltage at 5 Volts
+const float RES_1 = 330;    // MEASURE RESISTANCE AT RESISTOR
+
+const float VCC_2 = 4.71;       // MEASURE voltage at 5 Volts
+const float RES_2 = 330;    // MEASURE RESISTANCE AT RESISTOR
+
+
+const float RES_STRAIGHT_1 = 28400; // RESISTANCE WHEN STRAIGHT
+const float RES_RIGHT_ANGLE_1 = 65000.0; // RESISTANCE AT 90
+
+const float RES_STRAIGHT_2 = 23400; // RESISTANCE WHEN STRAIGHT
+const float RES_RIGHT_ANGLE_2 = 51100.0; // RESISTANCE AT 90
+
+
 
 int value = 0;
 
