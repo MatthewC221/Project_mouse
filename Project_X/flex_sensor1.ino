@@ -1,16 +1,18 @@
 
 const int FLEX_PIN = A0;      //PIN THATS CONNECTED TO THE VOLTAGE DIVIDER OUTPUT
 
-const float VCC = 4.98;       // MEASURE voltage at 5 Volts     ****NEEDS UPDATING****
-const float RES = 40000.0;    // MEASURE RESISTANCE AT RESISTOR ****NEEDS UPDATING****
+const float VCC = 4.97;       // MEASURE voltage at 5 Volts
+const float RES = 797;    // MEASURE RESISTANCE AT RESISTOR
 
 
-const float RES_STRAIGHT = 37300.0; // RESISTANCE WHEN STRAIGHT ****NEEDS UPDATING****
-const float RES_RIGHT_ANGLE = 90000.0; // RESISTANCE AT 90      ****NEEDS UPDATING****
+const float RES_STRAIGHT = 26600; // RESISTANCE WHEN STRAIGHT
+const float RES_RIGHT_ANGLE = 42600.0; // RESISTANCE AT 90
 
 int value = 0;
 
 int pin1 = 8; 
+
+int flag = 0;
 
 
 
@@ -24,36 +26,60 @@ void setup() {
  
 
 }
-
 void loop() {
   // put your main code here, to run repeatedly:
   value = analogRead(FLEX_PIN); //reads the analog value
-  Serial.println(value);      //prints analog value
+  
+ // Serial.print("Analog Value: ");
+ // Serial.println(value);      //prints analog value
+  
 
-  if(value >= 0){                                             ****NEEDS UPDATING****
-    digitalWrite(pin1, HIGH);// turns led on if bend is a certain value
-  }
-   
+  
  
  
 
   float FLEX_VOLTAGE = value * VCC / 1023.0; //voltage
   float FLEX_RES = RES * (VCC / FLEX_VOLTAGE -1); //resistance
 
-  Serial.println("Resistance: " + String(FLEX_RES) + "OHMS"); //prints value of resistance
+  //Serial.println("Resistance: " + String(FLEX_RES) + " OHMS"); //prints value of resistance
 
-  float ANGLE = map(FLEX_RES, RES_STRAIGHT, RES_RIGHT_ANGLE, 0, 90.0);    ****NEEDS UPDATING****
+  float ANGLE = map(FLEX_RES, 89795.33, 270000, 0, 90.0);
 
-  Serial.println("Bend: " + String(ANGLE) + "degrees");
-  Serial.println("----------------------------------------");
-
-
-  delay(100);
-  
+  //Serial.println("Bend: " + String(ANGLE) + " degrees");
+  //Serial.println("----------------------------------------");
 
   
+
+  if(ANGLE >= 20){
+    
+    digitalWrite(pin1, HIGH);// turns led on if bend is a certain value
+   // Serial.println("c1");
+  }else{
+    digitalWrite(pin1, LOW);
+    //Serial.println("c0");
+  }
+
+  if(flag == 0 && ANGLE>=20){
+    
+    flag = 1;
+    
+    Serial.println("(c1)");
+  }else if (flag == 1 && ANGLE <= 20){
   
+    flag = 0;
+    Serial.println("(c0)");
+   
+  }
+
+  
+  
+
+delay(100);
+
+
+
   
   
 
 }
+  
