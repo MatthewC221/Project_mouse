@@ -1,5 +1,4 @@
-
-const int FLEX_PIN = A0;      //PIN THATS CONNECTED TO THE VOLTAGE DIVIDER OUTPUT
+const int FLEX_PIN = A3;      //PIN THATS CONNECTED TO THE VOLTAGE DIVIDER OUTPUT
 
 const float VCC = 4.97;       // MEASURE voltage at 5 Volts
 const float RES = 797;    // MEASURE RESISTANCE AT RESISTOR
@@ -29,14 +28,6 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   value = analogRead(FLEX_PIN); //reads the analog value
-  
- // Serial.print("Analog Value: ");
- // Serial.println(value);      //prints analog value
-  
-
-  
- 
- 
 
   float FLEX_VOLTAGE = value * VCC / 1023.0; //voltage
   float FLEX_RES = RES * (VCC / FLEX_VOLTAGE -1); //resistance
@@ -47,38 +38,23 @@ void loop() {
 
   //Serial.println("Bend: " + String(ANGLE) + " degrees");
   //Serial.println("----------------------------------------");
-
   
-
-  if(ANGLE >= 20){
-    
-    digitalWrite(pin1, HIGH);// turns led on if bend is a certain value
-   // Serial.println("c1");
-  }else{
-    digitalWrite(pin1, LOW);
-    //Serial.println("c0");
-  }
-
+  Serial.print("(100,100)");
   if(flag == 0 && ANGLE>=20){
     
     flag = 1;
     
-    Serial.println("(c1)");
+    Serial.print("(C1)");
   }else if (flag == 1 && ANGLE <= 20){
   
     flag = 0;
-    Serial.println("(c0)");
+    Serial.print("(C0)");
    
   }
-
-  
   
 
-delay(100);
+  delay(20);
 
-
-
-  
   
 
 }
