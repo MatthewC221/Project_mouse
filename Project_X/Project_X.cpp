@@ -61,8 +61,7 @@ bool createConnection()
 		printf("Error = %d\n", error);
 		CloseHandle(hComm);
 		return false;
-	}
-	else {
+	} else {
 
 		// Use the bool status to test all of the setup functions
 		bool status;
@@ -91,8 +90,7 @@ bool createConnection()
 		if (!status) {
 			printf("Failed to set DCB structure\n");
 			return false;
-		}
-		else {
+		} else {
 			printf("Setting DCB Structure Successfull\n");
 			printf("\n       Baudrate = %d", dcbSerialParams.BaudRate);
 			printf("\n       ByteSize = %d", dcbSerialParams.ByteSize);
@@ -120,8 +118,7 @@ bool createConnection()
 		if (!status) {
 			printf("Not receiving!\n");
 			return false;
-		}
-		else {
+		} else {
 			printf("\nReady to receive\n");
 			int i = 0;
 			int total = 0;						// Total reads
